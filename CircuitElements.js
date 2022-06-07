@@ -101,7 +101,13 @@ function genMatrices(branches){
     else if(reducedBranches[i][0] == 'DC') {
       a = 0;
       b = 0;
-      value = reducedBranches[i][3];
+      value = (reducedBranches[i][3]).toString();
+      
+      if(!value.includes('*')){
+        Is.mat[i][0] = Number(value);
+        continue;
+      }
+      
       for(let i = a; i<value.length; i++){
         if(value[i] == '*')
           b = i;
