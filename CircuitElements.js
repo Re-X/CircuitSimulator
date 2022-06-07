@@ -55,10 +55,10 @@ function genMatrices(branches){
   for(let i = 0; i<reducedBranches.length; i++){
     Imat.mat[i][i] = 1;
     if(reducedBranches[i][1] != 0){
-      A.mat[reducedBranches[i][1] - 1][i] = 1;
+      A.mat[reducedBranches[i][1] - 1][i] += 1;
     }
     if(reducedBranches[i][2] != 0){
-      A.mat[reducedBranches[i][2] - 1][i] = -1;
+      A.mat[reducedBranches[i][2] - 1][i] -= 1;
     }
     
     if(reducedBranches[i][0] == 'R'){
