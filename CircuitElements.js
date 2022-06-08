@@ -73,7 +73,7 @@ function genMatrices(branches){
       Vs.mat[i][0] = -reducedBranches[i][3];
     }
     else if(reducedBranches[i][0] == 'I'){
-      Ge.mat[i][i] = 0;
+      Ge.mat[i][i] = 0.0000000000001;
       Is.mat[i][0] = reducedBranches[i][3];
     }
     else if(reducedBranches[i][0] == 'DV') {
@@ -99,6 +99,7 @@ function genMatrices(branches){
       }
     }
     else if(reducedBranches[i][0] == 'DC') {
+      Ge.mat[i][i] = 0.0000000000001;
       a = 0;
       b = 0;
       value = (reducedBranches[i][3]).toString();
