@@ -110,7 +110,7 @@ function mouseReleased() {
     genMatrices(branches);
     
     P = Imat.subtract(Ii).add(Ge.multiply(Vi));
-    Q = Ge.subtract(Ge.multiply(Vv).add(Iv));
+    Q = Ge.subtract(Ge.multiply(Vv)).add(Iv);
     Pinv = P.inverse();
     Vn = Solve(
       A.multiply(Pinv).multiply(Q).multiply(A.transpose()),
